@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard Logístico</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Dashboard Logístico</h1>
+    <p>Acompanhamento simples de entregas e atrasos</p>
+  </header>
+
+  <main>
+
+    <section class="filtros">
+      <h2>Filtros</h2>
+
+      <label for="transportadora">Transportadora:</label>
+      <select id="transportadora">
+        <option value="todas">Todas</option>
+        <option value="rotamax">RotaMax</option>
+        <option value="viacargo">ViaCargo</option>
+        <option value="flashlog">FlashLog</option>
+      </select>
+
+      <label for="regiao">Região:</label>
+      <select id="regiao">
+        <option value="todas">Todas</option>
+        <option value="sudeste">Sudeste</option>
+        <option value="sul">Sul</option>
+        <option value="nordeste">Nordeste</option>
+        <option value="norte">Norte</option>
+        <option value="centro-oeste">Centro-Oeste</option>
+      </select>
+
+      <button id="botaoFiltrar">Filtrar</button>
+    </section>
+
+    <section class="indicadores">
+      <h2>Indicadores principais</h2>
+
+      <div class="cards">
+        <div class="card1">
+          <h3>Total de entregas</h3>
+          <p id="totalEntregas">0</p>
+        </div>
+
+        <div class="card">
+          <h3>Entregas atrasadas</h3>
+          <p id="entregasAtrasadas">0</p>
+        </div>
+
+        <div class="card">
+          <h3>Taxa de atraso</h3>
+          <p id="taxaAtraso">0%</p>
+        </div>
+
+        <div class="card">
+          <h3>Maior atraso</h3>
+          <p id="maiorAtraso">0 dias</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="alerta">
+      <h2>Entrega mais crítica</h2>
+      <p id="entregaCritica">Carregando informações...</p>
+    </section>
+
+    <section class="graficoTexto">
+      <h2>Análise dos atrasos</h2>
+
+      <div class="graficos">
+          <div class="grafico">
+          <h3>Por transportadora</h3>
+          <canvas id="graficoTransportadora"></canvas>
+        </div>
+
+        <div class="grafico">
+          <h3>Por região</h3>
+          <canvas id="graficoRegiao"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="ranking">
+      <h2>Ranking de entregas atrasadas</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>ID</th>
+            <th>Transportadora</th>
+            <th>Região</th>
+            <th>Prazo</th>
+            <th>Dias reais</th>
+            <th>Atraso</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabelaRanking">
+        </tbody>
+      </table>
+    </section>
+
+    <section class="entregas">
+      <h2>Tabela geral de entregas</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Transportadora</th>
+            <th>Região</th>
+            <th>Prazo</th>
+            <th>Dias reais</th>
+            <th>Atraso</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabelaEntregas">
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Desafio dos Dados 2026 - Dashboard Logístico</p>
+  </footer>
+
+</body>
+</html>

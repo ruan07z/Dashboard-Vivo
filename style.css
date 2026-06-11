@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eeeeee;
+  margin: 0;
+  color: #222;
+}
+
+
+header {
+  background-color: purple;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 20px;
+  background-image: url('caminhao.jpg');
+  background-repeat: no-repeat; 
+  background-position: top left; 
+  background-size: 250px;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+h2 {
+  color: purple;
+}
+
+select, button {
+  padding: 7px;
+  margin: 5px;
+}
+
+button {
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #f3f3f3;
+  padding: 12px;
+  width: 180px;
+  border-left: 4px solid rgb(196, 21, 21);
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(196, 21, 21);
+}
+
+.card1 {
+  background-color: #f3f3f3;
+  padding: 12px;
+  width: 180px;
+  border-left: 4px solid rgb(0, 0, 0);
+}
+
+.card1 p {
+    font-size: 24px;
+  font-weight: bold;
+  color: rgb(34, 34, 34);
+}
+
+.alerta h2 {
+color: rgb(196, 21, 21) ;
+}
+
+.alerta strong
+{
+  color: rgb(196, 21, 21) ;
+}
+
+.grafico {
+  width: 450px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #cccccc;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: purple;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+footer {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.graficos {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
