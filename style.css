@@ -7,14 +7,14 @@ body {
 
 
 header {
-  background-color: purple;
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   text-align: center;
   padding: 20px;
-  background-image: url('caminhao.jpg');
   background-repeat: no-repeat; 
   background-position: top left; 
   background-size: 250px;
+  font-family: "Roboto Mono", monospace;
 }
 
 main {
@@ -29,7 +29,7 @@ section {
 }
 
 h2 {
-  color: purple;
+  color: rgb(0, 0, 0);
 }
 
 select, button {
@@ -38,10 +38,11 @@ select, button {
 }
 
 button {
-  background-color: purple;
+  background-color: rgb(0, 0, 0);
   color: white;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .cards {
@@ -56,6 +57,7 @@ button {
   width: 180px;
   height: 100px;
   border-left: 4px solid rgb(196, 21, 21);
+  border-radius: 4px;
   
 }
 
@@ -71,6 +73,7 @@ button {
   width: 180px;
   height: 100px;
   border-left: 4px solid rgb(0, 0, 0);
+  border-radius: 2px;
 }
 
 .card1 p {
@@ -106,7 +109,7 @@ th, td {
 }
 
 th {
-  background-color: purple;
+  background-color: rgb(0, 0, 0);
   color: white;
 }
 
@@ -146,7 +149,7 @@ footer {
     flex-direction: column;
   }
 
-  .card {
+  .card, .card1 {
     width: auto;
   }
 
