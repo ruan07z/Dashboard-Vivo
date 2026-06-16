@@ -25,10 +25,19 @@ function atraso(e) {
 function atualizarDashboard() {
   var filtroT = pegar("transportadora").value;
   var filtroR = pegar("regiao").value;
+  var filtroS = pegar("status").value;
 
   var dados = entregas.filter(function(e) {
-    return (filtroT == "todas" || e.transportadora.toLowerCase() == filtroT) &&
-           (filtroR == "todas" || e.regiao.toLowerCase() == filtroR);
+    var condTransportadora = (filtroT == "todas" || e.transportadora.toLowerCase() == filtroT);
+    var condRegiao = (filtroR == "todas" || e.regiao.toLowerCase() == filtroR);
+    var condStatus = (
+      filtroS == "todas" ? true :
+      filtroS == "noprazo" ? atraso(e) == 0 :
+      filtroS == "atrasado" ? atraso(e) > 0 :
+      true
+    );
+
+    return condTransportadora && condRegiao && condStatus;
   });
 
   var atrasadas = dados.filter(function(e) {
@@ -47,8 +56,8 @@ function atualizarDashboard() {
     return atraso(e) == maior && maior > 0;
   });
 
-    pegar("entregaCritica").innerHTML = pior
-    ? "Entrega " + `<strong>${pior.id}</strong>` + " da " + `<strong>${pior.transportadora}</strong>` + " com " +`<strong>${maior}</strong>` + " dias de atraso"
+  pegar("entregaCritica").innerHTML = pior
+    ? "Entrega " + `<strong>${pior.id}</strong>` + " da " + `<strong>${pior.transportadora}</strong>` + " com " + `<strong>${maior}</strong>` + " dias de atraso"
     : "Nenhuma entrega atrasada";
 
   mostrarTabela(dados);
